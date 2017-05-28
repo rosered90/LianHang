@@ -376,6 +376,10 @@ class IndexView(View):
 
         })
 
+
+
+
+
 def page_not_found(request):
     #全局404处理函数
     from django.shortcuts import render_to_response

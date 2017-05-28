@@ -25,7 +25,7 @@ from django.views.static import  serve
 from users.views import LoginView,RegisterView,AciveUserView,ForgetpwdView,ResetView,ModifyPwdView,LogoutView
 from users.views import IndexView
 from organization.views import OrgView
-from my323.settings import MEDIA_ROOT,STATIC_ROOT
+from my323.settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
@@ -51,7 +51,7 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$',serve,{"document_root":MEDIA_ROOT}),
 
     # 配置上传文件的访问处理函数
-    url(r'^static/(?P<path>.*)$', serve, {"document_root": STATIC_ROOT}),
+    # url(r'^static/(?P<path>.*)$', serve, {"document_root": STATIC_ROOT}),
     # 课程相关URL配置
     url(r'^users/', include('users.urls', namespace="users")),
 
