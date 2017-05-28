@@ -6,23 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9586fb9-a711-425a-ac0e-1dd12475bf87" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.woff" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/courses/adminx.py" afterPath="$PROJECT_DIR$/apps/courses/adminx.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/courses/models.py" afterPath="$PROJECT_DIR$/apps/courses/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/organization/adminx.py" afterPath="$PROJECT_DIR$/apps/organization/adminx.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/users/adminx.py" afterPath="$PROJECT_DIR$/apps/users/adminx.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/users/views.py" afterPath="$PROJECT_DIR$/apps/users/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra_apps/xadmin/plugins/auth.py" afterPath="$PROJECT_DIR$/extra_apps/xadmin/plugins/auth.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my323/settings.py" afterPath="$PROJECT_DIR$/my323/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my323/urls.py" afterPath="$PROJECT_DIR$/my323/urls.py" />
     </list>
     <ignored path="my323.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -845,7 +829,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16564885" sideWeight="0.75857145" order="0" side_tool="false" content_ui="combo" />
@@ -855,7 +839,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.75374377" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1936027" sideWeight="0.7358612" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7003367" sideWeight="0.7358612" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09318766" sideWeight="0.24142857" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
