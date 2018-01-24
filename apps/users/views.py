@@ -13,7 +13,7 @@ from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import UserProfile,EmailVerifyRecord
 from .models import UserProfile
-from .forms import LoginForm,RegisterForm,ForgetForm,ModifypwdForm,UploadImageForm,UserInfoForm
+from .forms import LoginForm,RegisterForm,ForgetForm,ModifyPwdForm,UploadImageForm,UserInfoForm
 from utils.email_send import send_register_email
 from operation.models import UserCourse, UserFavorite, UserMessage
 from utils.mixin_utils import LoginRequiredMixin
@@ -50,20 +50,17 @@ class AciveUserView(View):
         return render(request,"login.html")
 
 
-
-
 class RegisterView(View):
     def get(self, request):
         register_form = RegisterForm()
+        return render(request, "register.html", {'register_form':register_form})
 
-        return render(request,"register.html", {'register_form':register_form})
-
-    def post(self,request):
+    def post(self, request):
         register_form = RegisterForm(request.POST)
         if register_form.is_valid():
             user_name = request.POST.get("email", "")
-            if UserProfile.objects.fiflter(email=user_name):
-                return render(request, "register.html", {"register_form":register_form,"msg":"用户已经存在"})
+            if UserProfile.objects.filter(email=user_name):
+                return render(request, "register.html", {"register_form":register_form, "msg":"用户已经存在"})
             pass_word = request.POST.get("password", "")
             user_profile = UserProfile()
             user_profile.username = user_name
@@ -75,18 +72,14 @@ class RegisterView(View):
             #写入欢迎注册消息
             user_message = UserMessage()
             user_message.user = user_profile.id
-            user_message.message = "欢迎注册知网在线"
-
-            user_message = UserMessage()
-            user_message.user = user_profile.id
-            user_message.message = "欢迎注册知网在线网"
+            user_message.message = "欢迎注册慕学在线网"
             user_message.save()
 
-
-            send_register_email(user_name,"register")
+            send_register_email(user_name, "register")
             return render(request, "login.html")
         else:
-            return render(request,"register.html",{"register_form":register_form})
+            return render(request, "register.html", {"register_form":register_form})
+
 
 class LogoutView(View):
     """
@@ -108,7 +101,7 @@ class LoginView(View):
         return render(request, ("login.html"), {})
     def post(self,request):
         #request里面的POST就是字典，下面是传进去POST，做验证
-        login_form = LoginForm(request.POST)
+        login_form = LoginForm(request.POST) #view已经验证了是否合法
         if login_form.is_valid():
             user_name = request.POST.get("username", "")
             pass_word = request.POST.get("password", "")
@@ -173,7 +166,7 @@ class ModifyPwdView(View):
     修改用户密码
     """
     def post(self,request):
-        modify_form = ModifypwdForm(request.POST)
+        modify_form = ModifyPwdForm(request.POST)
         if modify_form.is_valid():
             pwd1 = request.POST.get("password1","")
             pwd2 = request.POST.get("password2","")
@@ -190,12 +183,15 @@ class ModifyPwdView(View):
             email = request.POST.get("email","")
             return render(request, "password_reset.html", {"email": email, "modify_form":modify_form})
 
+
 class UserinfoView(LoginRequiredMixin,View):
     """
     用户个人信息
     """
     def get(self,request):
         return render(request,'usercenter-info.html',{})
+
+
     def post(self,request):
         user_info_form = UserInfoForm(request.POST,instance=request.user)
         if user_info_form.is_valid():
@@ -225,7 +221,7 @@ class UpdatePwdView(View):
     个人中心修改用户密码
     """
     def post(self,request):
-        modify_form = ModifypwdForm(request.POST)
+        modify_form = ModifyPwdForm(request.POST)
         if modify_form.is_valid():
             pwd1 = request.POST.get("password1","")
             pwd2 = request.POST.get("password2","")

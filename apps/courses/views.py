@@ -127,10 +127,12 @@ class CourseInfoView(LoginRequiredMixin, View):
         course.students += 1
         course.save()
         #查询用户是否已经关联了该课程
-        user_courses = UserCourse.objects.filter(user=request.user, course=course)
-        if not user_courses:
-            user_course = UserCourse(user=request.user, course=course)
-            user_course.save()
+        if request.user.is_authenticated():
+            user_courses = UserCourse.objects.filter(user=request.user, course=course)
+            if not user_courses:
+                # if request.user.is_authenticated():
+                    user_course = UserCourse(user=request.user, course=course)
+                    user_course.save()
 
         user_cousers = UserCourse.objects.filter(course=course)
         user_ids = [user_couser.user.id for user_couser in user_cousers]

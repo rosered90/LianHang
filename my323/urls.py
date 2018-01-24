@@ -20,7 +20,7 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from django.views.generic import TemplateView
 import xadmin
-from django.views.static import  serve
+from django.views.static import serve
 
 from users.views import LoginView,RegisterView,AciveUserView,ForgetpwdView,ResetView,ModifyPwdView,LogoutView
 from users.views import IndexView
@@ -54,8 +54,8 @@ urlpatterns = [
     # url(r'^static/(?P<path>.*)$', serve, {"document_root": STATIC_ROOT}),
     # 课程相关URL配置
     url(r'^users/', include('users.urls', namespace="users")),
-
-
+    #富文本相关url
+    url(r'^ueditor/',include('DjangoUeditor.urls')),
 
 ]
 

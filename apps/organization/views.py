@@ -5,7 +5,7 @@ from django.views.generic import View
 from django.http import HttpResponse
 from django.db.models import Q
 
-from .models import CourseOrg, CityDict,Teacher
+from .models import CourseOrg, CityDict, Teacher
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from .forms import USerAskForm
 from courses.models import Course
@@ -301,12 +301,14 @@ class TeacherDetailView(View):
         all_courses = Course.objects.filter(teacher = teacher)
 
         has_teacher_faved = False
-        if UserFavorite.objects.filter(user = request.user,fav_type = 3,fav_id = teacher.id):
-            has_teacher_faved = True
+        if request.user.is_authenticated():
+            if UserFavorite.objects.filter(user = request.user,fav_type = 3,fav_id = teacher.id):
+                has_teacher_faved = True
 
         has_org_faved = False
-        if UserFavorite.objects.filter(user=request.user, fav_type=3, fav_id=teacher.org.id):
-            has_org_faved = True
+        if request.user.is_authenticated():
+            if UserFavorite.objects.filter(user=request.user, fav_type=3, fav_id=teacher.org.id):
+                has_org_faved = True
 
 
         #讲师排行榜
@@ -319,6 +321,7 @@ class TeacherDetailView(View):
             "has_org_faved":has_org_faved,
 
         })
+
 
 
 

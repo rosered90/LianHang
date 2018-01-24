@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'captcha',
     'pure_pagination',
+    'DjangoUeditor'
 
 ]
 AUTH_USER_MODEL = "users.UserProfile"
@@ -143,12 +144,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
 
-EMAIL_HOST = "smpt.sina.com"
+EMAIL_HOST = "smtp.sina.com"
 EMAIL_PORT = 25
-EMAIL_HOST_USER = "projectse@sina.com"
-EMAIL_HOST_PASSWORD = "admin123"
+EMAIL_HOST_USER = "ros_redff@sina.com"
+EMAIL_HOST_PASSWORD = "fang420"
 EMAIL_USE_TLS = False
-EMAIL_FROM = "projectse@sina.com"
+EMAIL_FROM = "ros_redff@sina.com"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')

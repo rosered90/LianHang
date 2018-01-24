@@ -1,6 +1,6 @@
 # coding:utf-8
-__author__ = 'fang'
-__date__ = '2017/5/4 0004 9:32'
+# __author__ = 'fang'
+# __date__ = '2017/5/4 0004 9:32'
 
 
 from django.conf.urls import url,include
