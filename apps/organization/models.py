@@ -22,6 +22,7 @@ class CityDict(models.Model):
 
 
 class CourseOrg(models.Model):
+
     name = models.CharField(max_length=50,verbose_name=U"机构名称")
     desc = models.TextField(verbose_name=u"机构描述")
     tag = models.CharField(default="全国知名",max_length=10,verbose_name=u"机构标签")

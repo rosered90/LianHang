@@ -71,6 +71,7 @@ class Lesson(models.Model):
 
     class Meta:
         verbose_name = u"章节"
+
         verbose_name_plural = verbose_name
 
     def __unicode__(self):

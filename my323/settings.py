@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for my323 project.
 
@@ -53,7 +54,7 @@ INSTALLED_APPS = [
     'DjangoUeditor'
 
 ]
-AUTH_USER_MODEL = "users.UserProfile"
+AUTH_USER_MODEL = "users.UserProfile"   
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -125,9 +126,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'zh-hans'
-
-TIME_ZONE = 'Asia/shanghai'
+# LANGUAGE_CODE = 'zh-hans'
+LANGUAGE_CODE = 'zh-Hans'
+TIME_ZONE = 'Asia/Shanghai'
+# TIME_ZONE = 'Asia/shanghai'
 
 USE_I18N = True
 
@@ -144,6 +146,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
 
+# SMTP服务器
 EMAIL_HOST = "smtp.sina.com"
 EMAIL_PORT = 25
 EMAIL_HOST_USER = "ros_redff@sina.com"

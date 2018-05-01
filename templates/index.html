@@ -11,36 +11,89 @@
         </div>
     </section>
 {% endblock %}
-{% block custom_js %}
-    <script type="text/javascript" src="/static/js/index.js"></script>
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/edslider.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <style>
+        .first-section{
+            margin-top:1000px;
+        }
+    </style>
 {% endblock %}
-
-{% block content %}
-    <div class="banner">
-			<div class="wp">
-				<div class="fl">
-					<div class="imgslide">
-						<ul class="imgs">
-                            {% for banner in all_banners %}
-
-                            <li>
-                                    <a href="{{ banner.url }}">
-                                        <img width="1200" height="478" src="{{ MEDIA_URL }}{{ banner.image }}" />
-                                    </a>
-                                </li>
-                            {% endfor %}
-
-
+{% block top_title %}
+    <div class="slideimg" style="position: relative;margin-left:0 !important;">
+                <nav >
+				<div class="nav" style="background-color: #3a3a3a;">
+					<div class="wp" style="background-color: transparent;background: none;">
+						<ul>
+							<li {% if request.path == '/' %}class="active" {% endif %}><a href="{% url 'index' %}">首页</a></li>
+							<li {% if request.path|slice:'7' == '/course' %}class="active"{% endif %}>
+								<a href="{% url 'course:course_list' %}">
+									公开课<img class="hot" src="{% static 'images/nav_hot.png' %}">
+								</a>
+							</li>
+							<li {% if request.path|slice:'12' == '/org/teacher' %}class="active"{% endif %}>
+								<a href="{% url 'org:teacher_list' %}">授课教师</a>
+							</li>
+							<li {% if request.path|slice:'9' == '/org/list' %}class="active" {% endif %}><a href="{% url 'org:org_list' %}">授课机构</a></li>
 						</ul>
 					</div>
-					<div class="unslider-arrow prev"></div>
-					<div class="unslider-arrow next"></div>
 				</div>
-
+			</nav>
+                <ul class="mySlideshow" >
+                    {% for banner in all_banners %}
+                    <li  style="background:url({{ MEDIA_URL }}{{ banner.image }}); background-size:100% 100%;">
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+{% endblock %}
+{% block nav_new %}
+    <nav>
+				<div class="nav">
+					<div class="wp">
+						<ul>
+							<li {% if request.path == '/' %}class="active" {% endif %}><a href="{% url 'index' %}">首页</a></li>
+							<li {% if request.path|slice:'7' == '/course' %}class="active"{% endif %}>
+								<a href="{% url 'course:course_list' %}">
+									公开课<img class="hot" src="{% static 'images/nav_hot.png' %}">
+								</a>
+							</li>
+							<li {% if request.path|slice:'12' == '/org/teacher' %}class="active"{% endif %}>
+								<a href="{% url 'org:teacher_list' %}">授课教师</a>
+							</li>
+							<li {% if request.path|slice:'9' == '/org/list' %}class="active" {% endif %}><a href="{% url 'org:org_list' %}">授课机构</a></li>
+						</ul>
+					</div>
 				</div>
-
-
-			</div>
+			</nav>
+{% endblock %}
+{% block content %}
+{#    <div class="banner">#}
+{#			<div class="wp">#}
+{#				<div class="fl">#}
+{#					<div class="imgslide">#}
+{#						<ul class="imgs">#}
+{#                            {% for banner in all_banners %}#}
+{##}
+{#                            <li>#}
+{#                                    <a href="{{ banner.url }}">#}
+{#                                        <img width="1200" height="478" src="{{ MEDIA_URL }}{{ banner.image }}" />#}
+{#                                    </a>#}
+{#                                </li>#}
+{#                            {% endfor %}#}
+{##}
+{##}
+{#						</ul>#}
+{#					</div>#}
+{#					<div class="unslider-arrow prev"></div>#}
+{#					<div class="unslider-arrow next"></div>#}
+{#				</div>#}
+{##}
+{#				</div>#}
+{##}
+{##}
+{#			</div>#}
 <!--banner end-->
 <!--feature start-->
 	<section>
@@ -158,7 +211,22 @@
 		</div>
 	</section>
 {% endblock %}
-
+{% block custom_js %}
+    <script type="text/javascript" src="/static/js/index.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.edslider.js"></script>
+    <script>
+        $(document).ready(function() {
+            //Initiazile plugin with your preferences
+            $('.mySlideshow').edslider({
+                width: window.innerWidth,
+                height: window.innerHeight,
+                progress: false,
+                navigator: false
+            });
+        });
+    $('.middle').innerHeight(window.innerHeight);
+    </script>
+{% endblock %}
 
 
 

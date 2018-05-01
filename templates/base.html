@@ -9,9 +9,11 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Lianhang.css' %}">
     {% block custom_css %}{% endblock %}
     <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}" type="text/javascript"></script>
+
 
 </head>
 <body>
@@ -56,8 +58,9 @@
 			</div>
 
             <div class="middle">
+                {% block top_title %}
                 <div class="wp">
-                    <a href="/"><img class="fl" src="{% static 'images/logo.jpg' %}"/></a>
+{#                    <a href="/"><img class="fl" src="{% static 'images/logo.jpg' %}"/></a>#}
                     <div class="searchbox fr">
                         <div class="selectContainer fl">
                             <span class="selectOption" id="jsSelectOption" data-value="course">
@@ -73,9 +76,9 @@
                         <img class="search_btn fr" id="jsSearchBtn" src="{% static 'images/search_btn.png' %}"/>
                     </div>
                 </div>
+                {% endblock %}
             </div>
-
-
+            {% block nav_new %}
 			<nav>
 				<div class="nav">
 					<div class="wp">
@@ -94,13 +97,13 @@
 					</div>
 				</div>
 			</nav>
-
+            {% endblock %}
 			</div>
     </header>
 </section>
 <!--crumbs start-->
 {% block custom_bread %}
-<section>
+<section class="first-section">
 	<div class="wp">
 		<ul  class="crumbs">
 			<li><a href="/">首页</a>></li>

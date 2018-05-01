@@ -19,6 +19,7 @@ def random_str(randomlength=8):
 
 
 def send_register_email(email, send_type="register"):
+    """邮箱验证码"""
     email_record = EmailVerifyRecord()
     if send_type == "update_email":
         code = random_str(4)

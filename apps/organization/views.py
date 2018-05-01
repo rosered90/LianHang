@@ -169,7 +169,7 @@ class OrgTeacherView(View):
     """
 
     def get(self, request, org_id):
-        current_page = "course"
+        current_page = "teacher"
         course_org = CourseOrg.objects.get(id=int(org_id))
         has_fav = False
         if request.user.is_authenticated():
