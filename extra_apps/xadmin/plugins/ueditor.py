@@ -16,7 +16,9 @@ class XadminUEditorWidget(UEditorWidget):
         self.Media.js = None
         super(XadminUEditorWidget,self).__init__(kwargs)
 
+
 class UeditorPlugin(BaseAdminPlugin):
+
 
     def get_field_style(self, attrs, db_field, style, **kwargs):
         if style == 'ueditor':
@@ -27,6 +29,7 @@ class UeditorPlugin(BaseAdminPlugin):
                 param.update(widget.attrs)
                 return {'widget': XadminUEditorWidget(**param)}
         return attrs
+
 
     def block_extrahead(self, context, nodes):
         js = '<script type="text/javascript" src="%s"></script>' % (settings.STATIC_URL + "ueditor/ueditor.config.js")         #自己的静态目录

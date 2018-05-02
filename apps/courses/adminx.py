@@ -25,10 +25,9 @@ class CourseAdmin(object):
     list_editable = ['degree','desc']
     exclude = ['fav_nums']
     inlines = [LessonInline,CourseResourceInline]
+    style_fields = {"detail": "ueditor"}
     refresh_times = [3,5]
-    style_fields = {"detail":"ueditor"}
     import_excel = True
-
 
     def save_models(self):
         #在保存课程的时候统计课程机构的课程数

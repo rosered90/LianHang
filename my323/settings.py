@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'captcha',
     'pure_pagination',
-    'DjangoUeditor'
+    'DjangoUeditor',
 
 ]
 AUTH_USER_MODEL = "users.UserProfile"   
@@ -94,12 +94,12 @@ WSGI_APPLICATION = 'my323.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'test2',
-        'USER': 'postgres',
-        'PASSWORD': 'fang0506',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'lianhang',
+        'USER': 'root',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
-        'PORT': 5432
+        # 'PORT': 5432
     }
 }
 
