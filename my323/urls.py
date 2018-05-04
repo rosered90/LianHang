@@ -55,7 +55,7 @@ urlpatterns = [
     # url(r'^static/(?P<path>.*)$', serve, {"document_root": STATIC_ROOT}),
     # 课程相关URL配置
     url(r'^users/', include('users.urls', namespace="users")),
-    #富文本相关url
+    # 富文本相关url
     url(r'^ueditor/',include('DjangoUeditor.urls')),
 
 ]
