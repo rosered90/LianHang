@@ -214,7 +214,7 @@
     <script type="text/javascript" src="/static/js/index.js"></script>
     <script type="text/javascript" src="/static/js/jquery.edslider.js"></script>
     <script>
-    var  window_height = window.innerHeight
+    var  window_height = window.innerHeight;
         $(document).ready(function() {
             //Initiazile plugin with your preferences
             $('.mySlideshow').edslider({
@@ -225,10 +225,9 @@
             });
         });
     $('.middle').innerHeight(window.innerHeight*(3/4));
-    $('.slideimg').click(function () {
-
-        $('html, body').animate({scrollTop: '800px'}, window_height*(3/4))
-    })
+    {#$('.slideimg').click(function () {#}
+    {##}
+    {#    $('html, body').animate({scrollTop: '800px'}, window_height*(3/4))#}
     </script>
 {% endblock %}
 
